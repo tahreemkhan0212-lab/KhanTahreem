@@ -1,0 +1,247 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+  color: #333;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(90deg, #512da8, #673ab7);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  font-weight: 600;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffeb3b;
+}
+
+/* SECTIONS */
+.section {
+  padding: 70px 50px;
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+h2 {
+  color: #4a148c;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+/* ABOUT SECTION BOX */
+#about p {
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  line-height: 1.8;
+  font-size: 1.05rem;
+  transition: transform 0.3s ease;
+}
+
+#about p:hover {
+  transform: scale(1.02);
+}
+
+/* PROJECTS */
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.project {
+  background: white;
+  border-radius: 15px;
+  width: 300px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+  animation: fadeUp 1s ease;
+}
+
+.project:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(81,45,168,0.4);
+}
+
+.project h3 {
+  color: #512da8;
+  margin-bottom: 10px;
+}
+
+/* CONTACT FORM */
+#contact form {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 450px;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#contact input,
+#contact textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  border-color: #7e57c2;
+  box-shadow: 0 0 5px rgba(126, 87, 194, 0.5);
+}
+
+#contact button {
+  background: linear-gradient(90deg, #512da8, #7e57c2);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#contact button:hover {
+  background: linear-gradient(90deg, #673ab7, #9575cd);
+}
+
+/* FOOTER */
+footer {
+  background: linear-gradient(90deg, #512da8, #673ab7);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 50px;
+  font-size: 0.9rem;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeUp {
+  from {opacity: 0; transform: translateY(40px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* -------------------
+   Responsive Design
+------------------- */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  .section {
+    padding: 40px 20px;
+  }
+
+  .project-list {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+    gap: 20px;
+  }
+
+  .project {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  input, textarea {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+/* ----- Fix header layout alignment on mobile ----- */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+  }
+
+  header .logo h1 {
+    font-size: 1.5rem;  
+    line-height: 1.1;
+    white-space: nowrap; 
+  }
+
+  nav a {
+    margin-left: 10px;
+    font-size: 0.9rem;
+  }
+
+  nav {
+    flex-shrink: 0;
+  }
+}
